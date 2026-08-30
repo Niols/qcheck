@@ -32,5 +32,4 @@ val derive_arb_sigs :
   loc:location ->
   rec_flag * type_declaration list ->
   signature
-(** [derive_arb_sigs ~loc xs] creates generator and arbitrary signatures for
-    type declarations in [xs]. *)
+(** [derive_arb_sigs ~loc xs] creates [QCheck.Gen.t] and [QCheck.arbitrary] signatures for type declarations in [xs]. *)

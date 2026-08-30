@@ -650,7 +650,8 @@ let derive_gen_sigs ~version ~loc ((_rf, tds) : rec_flag * type_declaration list
   List.map sig_of_td tds
 
 (** [derive_arb_sigs ~loc xs] creates generator and arbitrary signatures for
-    type declarations in [xs]. *)
+    type declarations in [xs].
+    These only apply to the [QCheck] module that has these two generator types. *)
 let derive_arb_sigs ~loc ((_rf, tds) as xs) : signature =
   let gen_sigs = derive_gen_sigs ~version:`QCheck ~loc xs in
   let (module A) = Ast_builder.make loc in
